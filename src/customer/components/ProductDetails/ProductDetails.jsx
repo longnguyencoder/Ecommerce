@@ -7,7 +7,8 @@ import { Box, Grid, LinearProgress, Rating } from "@mui/material";
 import { Button } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 import { color } from "../Product/FilterData";
-
+import { mens_kurta } from "../../data/mens_kuta";
+import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -346,8 +347,13 @@ export default function ProductDetails() {
           </div>
         </section>
         {/* similer productws */}
-        <section>
+        <section className="pt-10">
+          <h1 className="py-5 text-xl font-bold">Similer Products</h1>
             
+
+            <div className="flex flex-wrap space-y-5">
+                  {mens_kurta.map((item)=> <HomeSectionCard product={item}/> )}
+            </div>
         </section>
       </div>
     </div>
